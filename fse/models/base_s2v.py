@@ -308,6 +308,8 @@ class BaseSentence2VecModel(SaveLoad):
             Time in seconds for the task to be completed.
 
         """
+        if overall_time == 0:
+            overall_time = 0.000001
         logger.info(
             f"training on {eff_sentences} effective sentences with {eff_words} effective words "
             f"took {int(overall_time)}s with {int(eff_sentences / overall_time)} sentences/s"
